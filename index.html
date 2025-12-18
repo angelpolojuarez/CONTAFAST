@@ -1,108 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>CONTAFAST Pizzería</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     *{box-sizing:border-box}
-    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#f4f6f9;color:#111}
-    header{background:#fff;border-bottom:1px solid #e5e7eb}
-    .container{max-width:1200px;margin:auto;padding:20px}
-    .header-flex{display:flex;align-items:center;justify-content:space-between}
-    nav a{margin-left:20px;text-decoration:none;color:#0ea5e9;font-weight:600}
-    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 20px}
-    .hero img{max-width:200px}
-    h1{font-size:36px;margin:10px 0}
-    .hero p{font-size:16px;color:#374151}
-    section{padding:60px 20px}
-    h2{color:#0ea5e9;margin-bottom:30px}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-    .card{background:#0b1220;color:#fff;border-radius:18px;padding:20px;box-shadow:0 15px 30px rgba(0,0,0,.2)}
-    .card img{width:100%;border-radius:14px;margin-bottom:15px}
-    .price{color:#fde047;font-size:20px;font-weight:bold}
-    .form-card{background:#fff;color:#111;border-radius:18px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.15)}
-    .form-card input,.form-card button{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #d1d5db}
-    .form-card button{background:#0ea5e9;color:#fff;font-weight:bold;border:none;cursor:pointer}
-    footer{background:#0b1220;color:#fff;text-align:center;padding:25px}
-  </style>
-</head>
-<body>
+    body{
+      margin:0;
+      font-family:'Segoe UI', Arial, sans-serif;
+      background:#f4f6f9;
+      color:#111;
+    }
 
-<header>
-  <div class="container header-flex">
-    <div style="display:flex;align-items:center;gap:12px">
-      <img src="https://chatgpt.com/backend-api/estuary/content?id=file_000000005a1c71f5ba89b8f6e2f7c2b5&ts=490563&p=fs&cid=1&sig=66aded902f8a117e319ebb43314c70364e8fffdd7c6b51d86571fd207eb606f1&v=0" alt="CONTAFAST Logo" style="height:55px">
-      <strong>CONTAFAST</strong>
-    </div>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#ventas">Menú</a>
-      <a href="#login">Iniciar sesión</a>
-      <a href="#compras">Compras</a>
-    </nav>
-  </div>
-</header>
+    /* HEADER */
+    header{
+      background:#ffffff;
+      border-bottom:1px solid #e5e7eb;
+    }
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+    }
+    .header-flex{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    nav a{
+      margin-left:20px;
+      text-decoration:none;
+      color:#00cfff;
+      font-weight:600;
+    }
 
-<section id="inicio" class="hero container">
-  <div>
-    <img src="https://chatgpt.com/backend-api/estuary/content?id=file_000000005a1c71f5ba89b8f6e2f7c2b5&ts=490563&p=fs&cid=1&sig=66aded902f8a117e319ebb43314c70364e8fffdd7c6b51d86571fd207eb606f1&v=0" alt="CONTAFAST Logo">
-    <h1>CONTAFAST Pizzería</h1>
-    <p>Sistema profesional de gestión contable y comercial para pizzerías. Administra ventas, compras y pedidos online de forma rápida y segura.</p>
-  </div>
-  <div class="form-card">
-    <h3>Registro de Usuario</h3>
-    <input type="text" placeholder="Nombre completo">
-    <input type="email" placeholder="Correo electrónico">
-    <input type="password" placeholder="Contraseña">
-    <button>Registrarse</button>
-  </div>
-</section>
+    /* HERO */
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:40px;
+      align-items:center;
+      padding:60px 20px;
+    }
+    .hero img{
+      max-width:180px;
+    }
+    h1{
+      font-size:36px;
+      margin:15px 0;
+    }
+    p{
+      color:#374151;
+    }
 
-<section id="login" class="container">
-  <h2>Inicio de Sesión</h2>
-  <div class="form-card" style="max-width:400px">
-    <input type="email" placeholder="Correo">
-    <input type="password" placeholder="Contraseña">
-    <button>Ingresar</button>
-  </div>
-</section>
+    /* SECCIONES */
+    section{
+      padding:60px 20px;
+    }
+    h2{
+      color:#00cfff;
+      margin-bottom:30px;
+    }
 
-<section id="ventas" class="container">
-  <h2>Portafolio de Ventas</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1601924582975-7e670a04c1ad" alt="Pizza Pepperoni">
-      <h3>Pizza Pepperoni</h3>
-      <p class="price">S/ 25.00</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1548365328-9c8f6a2c0f31" alt="Pizza Hawaiana">
-      <h3>Pizza Hawaiana</h3>
-      <p class="price">S/ 28.00</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e" alt="Pizza Americana">
-      <h3>Pizza Americana</h3>
-      <p class="price">S/ 30.00</p>
-    </div>
-  </div>
-</section>
+    /* TARJETAS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+    .card{
+      background:#0b1220;
+      color:#ffffff;
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 15px 30px rgba(0,0,0,.2);
+    }
+    .card img{
+      width:100%;
+      border-radius:14px;
+      margin-bottom:15px;
+    }
+    .price{
+      color:#ffd700;
+      font-size:20px;
+      font-weight:bold;
+    }
 
-<section id="compras" class="container">
-  <h2>Gestión de Compras</h2>
-  <div class="form-card" style="max-width:450px">
-    <input type="text" placeholder="Proveedor">
-    <input type="text" placeholder="Producto (Queso, Harina, Salsa)">
-    <input type="number" placeholder="Monto S/">
-    <button>Registrar compra</button>
-  </div>
-</section>
+    /* F*
 
-<footer>
-  <p>© 2025 CONTAFAST – Tu contabilidad al ritmo del futuro</p>
-</footer>
-
-</body>
-</html>
 
