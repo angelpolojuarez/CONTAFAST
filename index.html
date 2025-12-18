@@ -3,120 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CONTAFAST Pizzería - Gestión y Sabor</title>
+  <title>CONTAFAST Pizzería | Gestión, Ventas y Pedidos</title>
+  <meta name="description" content="CONTAFAST Pizzería: sistema moderno para ventas, pedidos y control contable de tu pizzería.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --primary-color: #e30a13;
-      --secondary-color: #ffc107;
-      --dark-color: #1a1a1a;
-      --light-color: #ffffff;
-      --bg-light: #f8f8f8;
-      --bg-dark: #222222;
+    :root{
+      --primary:#e30a13;
+      --secondary:#ffc107;
+      --dark:#1a1a1a;
+      --light:#ffffff;
+      --gray:#f5f5f5;
     }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;background:var(--gray);color:var(--dark)}
+    .container{max-width:1200px;margin:auto;padding:0 20px}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* HEADER */
+    header{background:var(--light);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    .header-flex{display:flex;align-items:center;justify-content:space-between;height:80px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;color:var(--primary)}
+    .logo img{height:48px}
+    nav a{margin-left:22px;text-decoration:none;color:var(--dark);font-weight:600}
+    nav a:hover{color:var(--primary)}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--dark-color);
-      line-height: 1.6;
-    }
+    /* HERO */
+    .hero{background:url('https://images.unsplash.com/photo-1594007654729-407edc497cdf?fit=crop&w=1600&q=80') center/cover no-repeat;height:65vh;min-height:420px;display:flex;align-items:center;position:relative;color:white}
+    .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.65)}
+    .hero-content{position:relative;max-width:600px;background:rgba(0,0,0,.6);padding:40px;border-radius:16px}
+    .hero-content h1{font-size:44px;color:var(--secondary)}
+    .hero-content p{margin:15px 0 25px}
+    .btn{background:var(--primary);color:white;padding:14px 26px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
+    .btn:hover{background:#c4000a}
 
-    .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+    section{padding:80px 0}
+    h2{text-align:center;font-size:36px;color:var(--primary);margin-bottom:50px}
 
-    header {
-      background: var(--light-color);
-      box-shadow: 0 2px 10px rgba(0,0,0,.05);
-      position: sticky; top: 0; z-index: 100;
-    }
+    /* ABOUT */
+    .about{background:white}
+    .about p{text-align:center;max-width:800px;margin:auto;font-size:18px}
 
-    .header-flex {
-      display: flex; align-items: center; justify-content: space-between; height: 80px;
-    }
+    /* MENU */
+    .menu{background:#222;color:white}
+    .menu h2{color:var(--secondary)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+    .card{background:#111;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.5)}
+    .card img{width:100%;height:200px;object-fit:cover}
+    .card-body{padding:20px}
+    .card-body h3{margin-bottom:6px}
+    .price{color:var(--secondary);font-size:22px;font-weight:700}
 
-    .logo-container {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 24px; font-weight: 700; color: var(--primary-color);
-    }
+    /* CTA */
+    .cta{text-align:center;background:var(--primary);color:white}
+    .cta h2{color:white}
 
-    .logo-img { height: 50px; width: auto; }
+    /* FORMS */
+    .forms{background:white}
+    .form-box{max-width:400px;margin:auto;background:#fff;padding:35px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.1)}
+    .form-box input,.form-box button{width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ccc;font-size:16px}
+    .form-box button{background:var(--primary);color:white;font-weight:700;border:none}
 
-    nav a {
-      margin-left: 25px; text-decoration: none; color: var(--dark-color);
-      font-weight: 600; transition: color .3s;
-    }
-    nav a:hover { color: var(--primary-color); }
+    /* CONTACT */
+    .contact{background:#f1f1f1;text-align:center}
+    .contact p{font-size:18px}
 
-    .hero {
-      background: url('https://images.unsplash.com/photo-1594007654729-407edc497cdf?fit=crop&w=1600&h=700&q=80') no-repeat center/cover;
-      height: 60vh; min-height: 400px;
-      display: flex; align-items: center; color: white; position: relative;
-    }
+    /* FOOTER */
+    footer{background:#111;color:white;text-align:center;padding:30px;border-top:4px solid var(--primary)}
 
-    .hero::before {
-      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,.65);
-    }
-
-    .hero-content {
-      position: relative; max-width: 550px; padding: 40px;
-      background: rgba(26,26,26,.7); border-radius: 15px;
-    }
-
-    .hero-content h1 {
-      font-size: 48px; margin-bottom: 10px; color: var(--secondary-color);
-    }
-
-    .hero-button {
-      background: var(--primary-color); color: white;
-      padding: 12px 25px; text-decoration: none; border-radius: 8px;
-      font-weight: 600; display: inline-block; margin-top: 15px;
-    }
-
-    section { padding: 80px 0; }
-
-    h2 { text-align: center; color: var(--primary-color); font-size: 36px; margin-bottom: 50px; }
-
-    .form-section { background: var(--bg-light); }
-
-    .form-container { display: flex; justify-content: center; }
-
-    .form-card {
-      background: white; border-radius: 18px; padding: 35px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.1); max-width: 400px; width: 100%;
-    }
-
-    .form-card input, .form-card button {
-      width: 100%; padding: 15px; margin: 12px 0;
-      border-radius: 10px; border: 1px solid #ccc; font-size: 16px;
-    }
-
-    .form-card button {
-      background: var(--primary-color); color: white; font-weight: 700; border: none;
-    }
-
-    .menu-section { background: var(--bg-dark); color: white; }
-    .menu-section h2 { color: var(--secondary-color); }
-
-    .cards {
-      display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 30px;
-    }
-
-    .card {
-      background: var(--dark-color); border-radius: 18px; overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0,0,0,.4);
-    }
-
-    .card-img { width: 100%; height: 200px; object-fit: cover; }
-
-    .card-content { padding: 20px; }
-
-    .price { color: var(--secondary-color); font-size: 24px; font-weight: 700; }
-
-    footer {
-      background: var(--dark-color); color: white; text-align: center;
-      padding: 30px; border-top: 4px solid var(--primary-color);
+    @media(max-width:768px){
+      .hero-content h1{font-size:32px}
+      nav{display:none}
     }
   </style>
 </head>
@@ -124,80 +80,69 @@
 
 <header>
   <div class="container header-flex">
-    <div class="logo-container">
-      <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t39.30808-6/601000104_122163051914765046_7676122383399209215_n.jpg" alt="Logo CONTAFAST" class="logo-img">
+    <div class="logo">
+      <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t39.30808-6/601000104_122163051914765046_7676122383399209215_n.jpg" alt="CONTAFAST Logo">
       CONTAFAST
     </div>
     <nav>
       <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#menu">Menú</a>
       <a href="#login">Acceso</a>
-      <a href="#compras">Gestión</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </div>
 </header>
 
 <section id="inicio" class="hero">
   <div class="container hero-content">
-    <h1>El Sabor y la Contabilidad en un Solo Lugar</h1>
-    <p>Administra ventas, compras y pedidos online con CONTAFAST Pizzería.</p>
-    <a href="#menu" class="hero-button">Ver Menú</a>
+    <h1>Pizzería Inteligente + Contabilidad</h1>
+    <p>CONTAFAST integra ventas, pedidos y control contable en una sola plataforma moderna.</p>
+    <a href="#menu" class="btn">Ver Menú</a>
   </div>
 </section>
 
-<section id="registro" class="form-section">
-  <h2>Registro</h2>
-  <div class="container form-container">
-    <div class="form-card">
-      <input type="text" placeholder="Nombre completo">
-      <input type="email" placeholder="Correo">
-      <input type="password" placeholder="Contraseña">
-      <button>Registrarse</button>
-    </div>
-  </div>
+<section id="nosotros" class="about">
+  <h2>Sobre CONTAFAST</h2>
+  <p>CONTAFAST Pizzería nace para unir el sabor artesanal con la gestión profesional. Controla ventas, compras y pedidos online de forma simple, rápida y segura.</p>
 </section>
 
-<section id="login" class="form-section">
-  <h2>Login</h2>
-  <div class="container form-container">
-    <div class="form-card">
-      <input type="email" placeholder="Correo">
-      <input type="password" placeholder="Contraseña">
-      <button>Ingresar</button>
-    </div>
-  </div>
-</section>
-
-<section id="menu" class="menu-section">
+<section id="menu" class="menu">
   <div class="container">
     <h2>Menú de Pizzas</h2>
     <div class="cards">
-      <div class="card"><img class="card-img" src="https://images.unsplash.com/photo-1601924582975-7e670a04c1ad"><div class="card-content"><h3>Pepperoni</h3><span class="price">S/25</span></div></div>
-      <div class="card"><img class="card-img" src="https://images.unsplash.com/photo-1548365328-9c8f6a2c0f31"><div class="card-content"><h3>Hawaiana</h3><span class="price">S/28</span></div></div>
-      <div class="card"><img class="card-img" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e"><div class="card-content"><h3>Americana</h3><span class="price">S/30</span></div></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1601924582975-7e670a04c1ad"><div class="card-body"><h3>Pepperoni</h3><span class="price">S/ 25.00</span></div></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1548365328-9c8f6a2c0f31"><div class="card-body"><h3>Hawaiana</h3><span class="price">S/ 28.00</span></div></div>
+      <div class="card"><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e"><div class="card-body"><h3>Americana</h3><span class="price">S/ 30.00</span></div></div>
     </div>
   </div>
 </section>
 
-<section id="compras" class="form-section">
-  <h2>Gestión de Compras</h2>
-  <div class="container form-container">
-    <div class="form-card">
-      <input type="text" placeholder="Proveedor">
-      <input type="text" placeholder="Producto">
-      <input type="number" placeholder="Monto S/">
-      <button>Registrar</button>
-    </div>
+<section class="cta">
+  <h2>📲 Pide ahora por WhatsApp</h2>
+  <a href="https://wa.me/51999999999" class="btn">Ordenar Pizza</a>
+</section>
+
+<section id="login" class="forms">
+  <h2>Acceso al Sistema</h2>
+  <div class="form-box">
+    <input type="email" placeholder="Correo electrónico">
+    <input type="password" placeholder="Contraseña">
+    <button>Ingresar</button>
   </div>
+</section>
+
+<section id="contacto" class="contact">
+  <h2>Contacto</h2>
+  <p>📍 Lima - Perú<br>📞 +51 999 999 999<br>🕒 Lunes a Domingo 12:00 pm - 11:00 pm</p>
 </section>
 
 <footer>
-  © 2025 CONTAFAST Pizzería
+  © 2025 CONTAFAST Pizzería | Sistema de Gestión y Contabilidad
 </footer>
 
 </body>
 </html>
-
 
 
 
