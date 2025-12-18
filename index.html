@@ -5,56 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CONTAFAST Pizzería</title>
   <style>
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background:#0b1220; color:#fff; }
-    header { background:#000; padding:20px; display:flex; align-items:center; justify-content:space-between; }
-    header img { height:50px; }
-    nav a { color:#00e5ff; margin:0 10px; text-decoration:none; font-weight:bold; }
-    section { padding:40px 20px; }
-    h2 { color:#00e5ff; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-    .card { background:#111a33; border-radius:12px; padding:15px; box-shadow:0 10px 20px rgba(0,0,0,.3); }
-    .card img { width:100%; border-radius:10px; }
-    .price { color:#ffd54f; font-size:18px; font-weight:bold; }
-    input, button { width:100%; padding:10px; margin:8px 0; border-radius:8px; border:none; }
-    button { background:#00e5ff; font-weight:bold; cursor:pointer; }
-    footer { background:#000; text-align:center; padding:20px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#f4f6f9;color:#111}
+    header{background:#fff;border-bottom:1px solid #e5e7eb}
+    .container{max-width:1200px;margin:auto;padding:20px}
+    .header-flex{display:flex;align-items:center;justify-content:space-between}
+    nav a{margin-left:20px;text-decoration:none;color:#0ea5e9;font-weight:600}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:60px 20px}
+    .hero img{max-width:200px}
+    h1{font-size:36px;margin:10px 0}
+    .hero p{font-size:16px;color:#374151}
+    section{padding:60px 20px}
+    h2{color:#0ea5e9;margin-bottom:30px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+    .card{background:#0b1220;color:#fff;border-radius:18px;padding:20px;box-shadow:0 15px 30px rgba(0,0,0,.2)}
+    .card img{width:100%;border-radius:14px;margin-bottom:15px}
+    .price{color:#fde047;font-size:20px;font-weight:bold}
+    .form-card{background:#fff;color:#111;border-radius:18px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.15)}
+    .form-card input,.form-card button{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #d1d5db}
+    .form-card button{background:#0ea5e9;color:#fff;font-weight:bold;border:none;cursor:pointer}
+    footer{background:#0b1220;color:#fff;text-align:center;padding:25px}
   </style>
 </head>
 <body>
 
-<header style="background:#ffffff;color:#000;">
-  <div style="max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;">
-    <div style="display:flex;align-items:center;gap:12px;">
-      <section id="inicio" style="background:#f5f5f5;color:#000;text-align:center;">
-  <img src="/mnt/data/f607a384-2809-400e-b52b-5ebbeb2ef3a2.png" alt="CONTAFAST" style="max-width:180px;margin-bottom:20px;" />
-  <h2>CONTAFAST Pizzería</h2>
-  <p>Gestiona ventas, compras y pedidos online de tu pizzería con un sistema moderno y rápido.</p>
-</section>ería</h2>
-  <p>Sistema de gestión contable y comercial para pizzerías. Controla tus ventas, compras y clientes al ritmo del futuro.</p>
-</section>
+<header>
+  <div class="container header-flex">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="/mnt/data/f607a384-2809-400e-b52b-5ebbeb2ef3a2.png" alt="CONTAFAST" style="height:55px">
+      <strong>CONTAFAST</strong>
+    </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#ventas">Menú</a>
+      <a href="#login">Iniciar sesión</a>
+      <a href="#compras">Compras</a>
+    </nav>
+  </div>
+</header>
 
-<section id="registro">
-  <h2>Registro de Usuario</h2>
-  <div class="card" style="max-width:400px;">
-    <input type="text" placeholder="Nombre completo" />
-    <input type="email" placeholder="Correo electrónico" />
-    <input type="password" placeholder="Contraseña" />
+<section id="inicio" class="hero container">
+  <div>
+    <img src="/mnt/data/f607a384-2809-400e-b52b-5ebbeb2ef3a2.png" alt="CONTAFAST">
+    <h1>CONTAFAST Pizzería</h1>
+    <p>Sistema profesional de gestión contable y comercial para pizzerías. Administra ventas, compras y pedidos online de forma rápida y segura.</p>
+  </div>
+  <div class="form-card">
+    <h3>Registro de Usuario</h3>
+    <input type="text" placeholder="Nombre completo">
+    <input type="email" placeholder="Correo electrónico">
+    <input type="password" placeholder="Contraseña">
     <button>Registrarse</button>
   </div>
 </section>
 
-<section id="login">
+<section id="login" class="container">
   <h2>Inicio de Sesión</h2>
-  <div class="card" style="max-width:400px;">
-    <input type="email" placeholder="Correo" />
-    <input type="password" placeholder="Contraseña" />
+  <div class="form-card" style="max-width:400px">
+    <input type="email" placeholder="Correo">
+    <input type="password" placeholder="Contraseña">
     <button>Ingresar</button>
   </div>
 </section>
 
-<section id="ventas">
+<section id="ventas" class="container">
   <h2>Portafolio de Ventas</h2>
-  <div class="grid">
+  <div class="cards">
     <div class="card">
       <img src="https://images.unsplash.com/photo-1601924582975-7e670a04c1ad" alt="Pizza Pepperoni">
       <h3>Pizza Pepperoni</h3>
@@ -73,20 +89,19 @@
   </div>
 </section>
 
-<section id="compras">
+<section id="compras" class="container">
   <h2>Gestión de Compras</h2>
-  <div class="card" style="max-width:500px;">
-    <input type="text" placeholder="Proveedor" />
-    <input type="text" placeholder="Producto (Queso, Harina, Salsa...)" />
-    <input type="number" placeholder="Monto S/" />
-    <button>Registrar Compra</button>
+  <div class="form-card" style="max-width:450px">
+    <input type="text" placeholder="Proveedor">
+    <input type="text" placeholder="Producto (Queso, Harina, Salsa)">
+    <input type="number" placeholder="Monto S/">
+    <button>Registrar compra</button>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 CONTAFAST - Tu contabilidad al ritmo del futuro</p>
+  <p>© 2025 CONTAFAST – Tu contabilidad al ritmo del futuro</p>
 </footer>
 
 </body>
 </html>
-
