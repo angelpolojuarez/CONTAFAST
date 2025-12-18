@@ -1,147 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CONTAFAST Pizzería | Gestión, Ventas y Pedidos</title>
-  <meta name="description" content="CONTAFAST Pizzería: sistema moderno para ventas, pedidos y control contable de tu pizzería.">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --primary:#e30a13;
-      --secondary:#ffc107;
-      --dark:#1a1a1a;
-      --light:#ffffff;
-      --gray:#f5f5f5;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;background:var(--gray);color:var(--dark)}
-    .container{max-width:1200px;margin:auto;padding:0 20px}
-
-    /* HEADER */
-    header{background:var(--light);position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-    .header-flex{display:flex;align-items:center;justify-content:space-between;height:80px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;color:var(--primary)}
-    .logo img{height:48px}
-    nav a{margin-left:22px;text-decoration:none;color:var(--dark);font-weight:600}
-    nav a:hover{color:var(--primary)}
-
-    /* HERO */
-    .hero{background:url('https://images.unsplash.com/photo-1594007654729-407edc497cdf?fit=crop&w=1600&q=80') center/cover no-repeat;height:65vh;min-height:420px;display:flex;align-items:center;position:relative;color:white}
-    .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.65)}
-    .hero-content{position:relative;max-width:600px;background:rgba(0,0,0,.6);padding:40px;border-radius:16px}
-    .hero-content h1{font-size:44px;color:var(--secondary)}
-    .hero-content p{margin:15px 0 25px}
-    .btn{background:var(--primary);color:white;padding:14px 26px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block}
-    .btn:hover{background:#c4000a}
-
-    section{padding:80px 0}
-    h2{text-align:center;font-size:36px;color:var(--primary);margin-bottom:50px}
-
-    /* ABOUT */
-    .about{background:white}
-    .about p{text-align:center;max-width:800px;margin:auto;font-size:18px}
-
-    /* MENU */
-    .menu{background:#222;color:white}
-    .menu h2{color:var(--secondary)}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-    .card{background:#111;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.5)}
-    .card img{width:100%;height:200px;object-fit:cover}
-    .card-body{padding:20px}
-    .card-body h3{margin-bottom:6px}
-    .price{color:var(--secondary);font-size:22px;font-weight:700}
-
-    /* CTA */
-    .cta{text-align:center;background:var(--primary);color:white}
-    .cta h2{color:white}
-
-    /* FORMS */
-    .forms{background:white}
-    .form-box{max-width:400px;margin:auto;background:#fff;padding:35px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.1)}
-    .form-box input,.form-box button{width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ccc;font-size:16px}
-    .form-box button{background:var(--primary);color:white;font-weight:700;border:none}
-
-    /* CONTACT */
-    .contact{background:#f1f1f1;text-align:center}
-    .contact p{font-size:18px}
-
-    /* FOOTER */
-    footer{background:#111;color:white;text-align:center;padding:30px;border-top:4px solid var(--primary)}
-
-    @media(max-width:768px){
-      .hero-content h1{font-size:32px}
-      nav{display:none}
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTAFAST | Pizzería</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
   <div class="container header-flex">
     <div class="logo">
-      <img src="https://images.unsplash.com/photo-1585238342028-4bbc1a7b9a7c?fit=crop&w=200&h=200&q=80" alt="CONTAFAST Logo">
-      CONTAFAST
+      🍕 CONTAFAST
     </div>
     <nav>
       <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
       <a href="#menu">Menú</a>
-      <a href="#login">Acceso</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </div>
 </header>
 
-<section id="inicio" class="hero">
-  <div class="container hero-content">
-    <h1>Pizzería Inteligente + Contabilidad</h1>
-    <p>CONTAFAST integra ventas, pedidos y control contable en una sola plataforma moderna.</p>
-    <a href="#menu" class="btn">Ver Menú</a>
-  </div>
-</section>
-
-<section id="nosotros" class="about">
-  <h2>Sobre CONTAFAST</h2>
-  <p>CONTAFAST Pizzería nace para unir el sabor artesanal con la gestión profesional. Controla ventas, compras y pedidos online de forma simple, rápida y segura.</p>
-</section>
-
-<section id="menu" class="menu">
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
   <div class="container">
-    <h2>Menú de Pizzas</h2>
-    <div class="cards">
-      <div class="card"><img src="https://images.unsplash.com/photo-1601924579440-5a3f9b1f5a45?fit=crop&w=800&q=80" alt="Pizza Pepperoni"><div class="card-body"><h3>Pepperoni</h3><span class="price">S/ 25.00</span></div></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?fit=crop&w=800&q=80" alt="Pizza Hawaiana"><div class="card-body"><h3>Hawaiana</h3><span class="price">S/ 28.00</span></div></div>
-      <div class="card"><img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?fit=crop&w=800&q=80" alt="Pizza Americana"><div class="card-body"><h3>Americana</h3><span class="price">S/ 30.00</span></div></div>
+    <div class="hero-content">
+      <h1>Pizzería CONTAFAST</h1>
+      <p>Las mejores pizzas artesanales, rápidas y deliciosas.</p>
+      <a href="#menu" class="btn">Ver menú</a>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <h2>📲 Pide ahora por WhatsApp</h2>
-  <a href="https://wa.me/51999999999" class="btn">Ordenar Pizza</a>
-</section>
-
-<section id="login" class="forms">
-  <h2>Acceso al Sistema</h2>
-  <div class="form-box">
-    <input type="email" placeholder="Correo electrónico">
-    <input type="password" placeholder="Contraseña">
-    <button>Ingresar</button>
+<!-- ================= ABOUT ================= -->
+<section class="about">
+  <div class="container">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      En CONTAFAST combinamos tradición, sabor y rapidez para ofrecerte
+      pizzas de calidad con los mejores ingredientes.
+    </p>
   </div>
 </section>
 
-<section id="contacto" class="contact">
-  <h2>Contacto</h2>
-  <p>📍 Lima - Perú<br>📞 +51 999 999 999<br>🕒 Lunes a Domingo 12:00 pm - 11:00 pm</p>
+<!-- ================= MENU ================= -->
+<section class="menu" id="menu">
+  <div class="container">
+    <h2>Nuestro Menú</h2>
+
+    <div class="cards">
+
+      <!-- Pizza Hawaiana -->
+      <div class="card">
+        <a href="https://www.infobae.com/tendencias/2025/03/26/receta-de-pizza-hawaiana-rapida-y-facil/"
+           target="_blank"
+           style="text-decoration:none;color:inherit">
+
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?fit=crop&w=800&q=80"
+               alt="Pizza Hawaiana">
+
+          <div class="card-body">
+            <h3>Pizza Hawaiana</h3>
+            <p>Jamón, piña y queso mozzarella.</p>
+            <span class="price">S/ 28.00</span>
+          </div>
+
+        </a>
+      </div>
+
+      <!-- Pizza Pepperoni -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1601924582975-7e670f79f3c4?fit=crop&w=800&q=80"
+             alt="Pizza Pepperoni">
+        <div class="card-body">
+          <h3>Pizza Pepperoni</h3>
+          <p>Pepperoni, salsa especial y mozzarella.</p>
+          <span class="price">S/ 30.00</span>
+        </div>
+      </div>
+
+      <!-- Pizza Clásica -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1548365328-5e48f06c1b14?fit=crop&w=800&q=80"
+             alt="Pizza Clásica">
+        <div class="card-body">
+          <h3>Pizza Clásica</h3>
+          <p>Salsa de tomate, queso y orégano.</p>
+          <span class="price">S/ 25.00</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="container">
+    <h2>¡Haz tu pedido ahora!</h2>
+    <p>Delivery rápido y seguro</p>
+    <a href="https://wa.me/51999999999" class="btn">Pedir por WhatsApp</a>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <h2>Contacto</h2>
+    <p>📍 Perú</p>
+    <p>📞 999 999 999</p>
+    <p>📧 contacto@contafast.com</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-  © 2025 CONTAFAST Pizzería | Sistema de Gestión y Contabilidad
+  <p>© 2025 CONTAFAST Pizzería | Todos los derechos reservados</p>
 </footer>
 
 </body>
 </html>
+
 
 
